@@ -1,0 +1,81 @@
+:root {
+  --color-white: #fff;
+  --color-dark-blue: #1B1D23;
+  --color-dark-gray: #60636D;
+  --color-mid-gray: #7D828F;
+  --color-light-gray: #C8CCD8;
+  --color-very-light-gray: #EEEFF4;
+  --color-red: #DF5656;
+
+  /* Font weights */
+  --weight-bold: 700;
+  --weight-mid: 500;
+
+  /* Design elements */
+  --transition: 300ms ease-in-out;
+}
+
+/* Reset */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: 'Spartan', sans-serif;
+  background-color: var(--color-white);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sr-only {
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  border: 0;
+}
+
+.button {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #sapper {
+    position: relative;
+    max-width: 144rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
