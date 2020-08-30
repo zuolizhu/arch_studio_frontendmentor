@@ -189,10 +189,18 @@
 	}
 
 	.header__main-nav__menu {
-		width: 31.6rem;
 		margin-left: 7.8rem;
 		display: inline-flex;
-		justify-content: space-between;
+	}
+	@media screen and (min-width: 1280px) {
+		.header__main-nav__menu {
+			margin-left: 9.4rem;
+		}
+	}
+
+	.header__main-nav__menu__item:nth-child(2) {
+		margin-left: 5.6rem;
+		margin-right: 4.8rem;
 	}
 
 </style>
