@@ -95,6 +95,33 @@ a {
   }
 }
 
+.t-h1-l {
+  font-size: 12rem;
+  line-height: 20rem;
+  letter-spacing: -.3rem;
+  font-weight: var(--weight-bold);
+}
+@media screen and (min-width: 1024px) {
+  .t-h1-l {
+    font-size: 20rem;
+    letter-spacing: -.5rem;
+  }
+}
+
+.t-h2 {
+  font-size: 4rem;
+  line-height: 4.8rem;
+  letter-spacing: -.143rem;
+  font-weight: var(--weight-bold);
+}
+@media screen and (min-width: 768px) {
+  .t-h2 {
+    font-size: 5.6rem;
+    line-height: 5.6rem;
+    letter-spacing: -.2rem;
+  }
+}
+
 .t-body {
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -109,6 +136,15 @@ a {
 
 .t-white {
   color: var(--color-white);
+}
+.t-dark-blue {
+  color: var(--color-dark-blue);
+}
+.t-dark-gray {
+  color: var(--color-dark-gray);
+}
+.t-very-light-gray {
+  color: var(--color-very-light-gray);
 }
 
 .button.button--hero {
