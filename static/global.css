@@ -79,3 +79,51 @@ a {
     margin-right: auto;
   }
 }
+
+/* Type specs */
+.t-h1 {
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+  letter-spacing: -.12rem;
+  font-weight: var(--weight-bold);
+}
+@media screen and (min-width: 768px) {
+  .t-h1 {
+    font-size: 8rem;
+    line-height: 8rem;
+    letter-spacing: -.2rem;
+  }
+}
+
+.t-body {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: var(--weight-mid);
+}
+
+.t-body--bold {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  font-weight: var(--weight-bold);
+}
+
+.t-white {
+  color: var(--color-white);
+}
+
+.button.button--hero {
+  width: 25.2rem;
+  height: 7.2rem;
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 2.4rem 3.2rem 2.3rem 3rem;
+  background-color: var(--color-dark-blue);
+}
+.button--hero__arrow {
+  width: 2.4rem;
+  height: 1.8rem;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/icons/icon-arrow-white.svg);
+}

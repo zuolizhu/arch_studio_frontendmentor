@@ -75,18 +75,24 @@
 		width: 100%;
 		text-align: center;
 	}
+	@media screen and (min-width: 768px) {
+		.header {
+			height: 15.2rem;
+		}
+	}
 
 	@media screen and (max-width: 767px) {
 		.header__sidebar {
-			position: fixed;
-			top: 9.6rem;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			background-color: rgba(0, 0, 0, .50);
+			z-index: 2;
+			top: 9.6rem;
 			display: flex;
+			position: fixed;
 			flex-direction: row;
 			justify-content: flex-end;
+			background-color: rgba(0, 0, 0, .50);
 		}
 	}
 	@media screen and (min-width: 768px) {
