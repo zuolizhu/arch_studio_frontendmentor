@@ -141,6 +141,12 @@ a {
   font-weight: var(--weight-bold);
 }
 
+.t-project-name {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: var(--weight-bold);
+}
+
 .t-white {
   color: var(--color-white);
 }
@@ -155,6 +161,10 @@ a {
 }
 .t-very-light-gray {
   color: var(--color-very-light-gray);
+}
+
+.t-op75 {
+  opacity: .75;
 }
 
 .button.button--hero {
