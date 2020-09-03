@@ -252,9 +252,14 @@
 	}
 	@media screen and (min-width: 1024px) {
 		.featured > .container {
-			padding: 0;
+			padding: 0 3.2rem;
 			margin: 0 auto;
 			max-width: 111rem;
+		}
+	}
+	@media screen and (min-width: 1200px) {
+		.featured > .container {
+			padding: 0;
 		}
 	}
 
