@@ -122,6 +122,13 @@ a {
   }
 }
 
+.t-h3 {
+  font-size: 1.8rem;
+  letter-spacing: 0;
+  line-height: 2.5rem;
+  font-weight: var(--weight-bold);
+}
+
 .t-body {
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -149,6 +156,14 @@ a {
 
 .button.button--hero {
   width: 25.2rem;
+}
+
+.button.button--smallteam {
+  width: 18.7rem;
+}
+
+.button.button--hero,
+.button.button--smallteam {
   height: 7.2rem;
   align-items: center;
   display: inline-flex;
@@ -156,10 +171,31 @@ a {
   padding: 2.4rem 3.2rem 2.3rem 3rem;
   background-color: var(--color-dark-blue);
 }
-.button--hero__arrow {
+.button--hero__arrow,
+.button--smallteam__arrow,
+.button--all__arrow {
   width: 2.4rem;
   height: 1.8rem;
   background-size: cover;
   background-position: center;
   background-image: url(/icons/icon-arrow-white.svg);
+}
+
+.button.button--all {
+  width: 100%;
+  height: 7.2rem;
+  padding-top: 2.4rem;
+  display: inline-flex;
+  padding-bottom: 2.3rem;
+  justify-content: center;
+  background-color: var(--color-dark-blue);
+}
+@media screen and (min-width: 560px) {
+  .button.button--all {
+    width: 16.9rem;
+  }
+}
+
+.button > .button--all__text {
+  margin-right: 2.4rem;
 }

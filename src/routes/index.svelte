@@ -1,6 +1,7 @@
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
 	import HomeSlider from '../components/HomeSlider.svelte';
+	import FeaturedProjects from '../components/FeaturedProjects.svelte';
 	
 	let sticker = 'Home';
 
@@ -31,7 +32,34 @@
 	</div>
 </section>
 
+<section class="smallteam">
+	<div class="container">
+		<div class="smallteam__content">
+			<h2 class="t-h2 t-white smallteam__content__heading">Small team,<br>big ideas</h2>
+			<a class="button button--smallteam" href="/about">
+				<span class="t-body--bold t-white">About Us</span>
+				<span class="button--smallteam__arrow"></span>
+			</a>
+		</div>
+	</div>
+</section>
 
+<section class="featured">
+	<div class="container">
+		<div class="featured__heading">
+			<h2 class="t-h2 t-dark-blue">Featured</h2>
+			<a class="button button--all featured__button featured__button--top" href="/portfolio">
+				<span class="t-body--bold t-white button--all__text">See All</span>
+				<span class="button--all__arrow"></span>
+			</a>
+		</div>
+		<FeaturedProjects/>
+		<a class="button button--all featured__button featured__button--bottom" href="/portfolio">
+			<span class="t-body--bold t-white button--all__text">See All</span>
+			<span class="button--all__arrow"></span>
+		</a>
+	</div>
+</section>
 <style>
 	/* Hero Section */
 	.hero {
@@ -151,4 +179,126 @@
 		}
 	}
 	
+	/* Smallteam Section */
+	.smallteam > .container {
+		width: 100%;
+		height: 56rem;
+		position: relative;
+		padding: 18rem 3.2rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url(/home/mobile/image-small-team.jpg);
+	}
+	@media screen and (min-width: 768px) {
+		.smallteam > .container {
+			width: 74.609%;
+			margin: 0 auto;
+			padding: 16.8rem 0rem 16.8rem 5.8rem;
+			background-image: url(/home/tablet/image-small-team.jpg);
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		.smallteam > .container {
+			width: 80%;
+			max-width: 111rem;
+			padding: 17.1rem 0rem 19rem 19rem;
+			background-image: url(/home/desktop/image-small-team.jpg);
+		}
+	}
+
+	/* overlay */
+	.smallteam > .container::before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .50);
+	}
+
+	.smallteam__content {
+		z-index: 1;
+		height: 100%;
+		position: relative;
+	}
+
+	.smallteam__content__heading {
+		margin-bottom: 3.2rem;
+	}
+	@media screen and (min-width: 768px) {
+		.smallteam__content__heading {
+			margin-bottom: 3.6rem;
+		}
+	}
+
+	/* Featured Section */
+	.featured {
+		margin-top: 7.2rem;
+	}
+	@media screen and (min-width: 768px) {
+		.featured {
+			margin-top: 20rem;
+		}
+	}
+
+	.featured > .container {
+		padding: 0 3.2rem;
+	}
+	@media screen and (min-width: 768px) {
+		.featured > .container {
+			padding: 0 9.8rem 0 9.7rem;
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		.featured > .container {
+			padding: 0;
+			margin: 0 auto;
+			max-width: 111rem;
+		}
+	}
+
+	.featured__heading {
+		margin-bottom: 4.8rem;
+	}
+	@media screen and (min-width: 560px) {
+		.featured__heading {
+			width: 100%;
+			align-items: center;
+			display: inline-flex;
+			margin-bottom: 8.5rem;
+			justify-content: space-between;
+		}
+	}
+	@media screen and (min-width: 1024px) {
+		.featured__heading {
+			margin-bottom: 6.4rem;
+		}
+	}
+
+	.featured__button {
+		margin-top: 2.4rem;
+	}
+	@media screen and (min-width: 560px) {
+		.featured__button {
+			margin-top: 0;
+		}
+	}
+
+	.featured__button--top {
+		display: none;
+	}
+	@media screen and (min-width: 560px) {
+		.featured__button--top {
+			display: inline-flex;
+		}
+	}
+	.featured__button--bottom {
+		display: inline-flex;
+	}
+	@media screen and (min-width: 560px) {
+		.featured__button--bottom {
+			display: none;
+		}
+	}
 </style>
