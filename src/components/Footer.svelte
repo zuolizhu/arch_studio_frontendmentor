@@ -7,13 +7,13 @@
     <nav class="footer__nav">
       <ul class="footer__nav__menu">
         <li class="footer__nav__menu__item">
-          <a class="t-body--bold t-mid-gray" href="/portfolio">Portfolio</a>
+          <a class="t-body--bold t-mid-gray t-footer-nav" href="/portfolio">Portfolio</a>
         </li>
         <li class="footer__nav__menu__item">
-          <a class="t-body--bold t-mid-gray" href="/about">About Us</a>
+          <a class="t-body--bold t-mid-gray t-footer-nav" href="/about">About Us</a>
         </li>
         <li class="footer__nav__menu__item">
-          <a class="t-body--bold t-mid-gray" href="/contact">Contact</a>
+          <a class="t-body--bold t-mid-gray t-footer-nav" href="/contact">Contact</a>
         </li>
       </ul>
     </nav>
@@ -140,6 +140,14 @@
       margin-left: 5.6rem;
       margin-right: 4.8rem;
     }
+  }
+
+  .t-footer-nav {
+    transition: var(--transition) color;
+  }
+  
+  .footer__nav__menu__item:hover > .t-footer-nav {
+    color: var(--color-dark-blue);
   }
 
 
