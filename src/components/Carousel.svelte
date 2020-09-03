@@ -96,10 +96,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-
-	ul li:hover {
-		background-color: rgba(255,255,255,0.85);
-	}
   
   .carousel-nav {
     display: none;
@@ -127,10 +123,15 @@
 		color: var(--color-mid-gray);
 		font-weight: var(--weight-bold);
 		background-color: var(--color-white);
+		transition: var(--transition) background-color;
 	}
 	.carousel-nav li.active {
 		color: var(--color-white);
 		background-color: var(--color-dark-blue);
+	}
+
+	.carousel-nav li:not(.active):hover {
+		background-color: var(--color-very-light-gray);
 	}
 </style>
 

@@ -170,7 +170,9 @@ a {
   justify-content: space-between;
   padding: 2.4rem 3.2rem 2.3rem 3rem;
   background-color: var(--color-dark-blue);
+  transition: var(--transition) background-color;
 }
+
 .button--hero__arrow,
 .button--smallteam__arrow,
 .button--all__arrow {
@@ -189,6 +191,7 @@ a {
   padding-bottom: 2.3rem;
   justify-content: center;
   background-color: var(--color-dark-blue);
+  transition: var(--transition) background-color;
 }
 @media screen and (min-width: 560px) {
   .button.button--all {
@@ -198,4 +201,11 @@ a {
 
 .button > .button--all__text {
   margin-right: 2.4rem;
+}
+
+
+.button.button--hero:hover,
+.button.button--smallteam:hover,
+.button.button--all:hover {
+  background-color: var(--color-dark-gray);
 }

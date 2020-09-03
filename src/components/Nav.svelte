@@ -67,6 +67,7 @@
 		line-height: 2.5rem;
 		color: var(--color-mid-gray);
 		font-weight: var(--weight-bold);
+		transition: var(--transition) color;
 	}
 
 	.header {
@@ -207,6 +208,10 @@
 	.header__main-nav__menu__item:nth-child(2) {
 		margin-left: 5.6rem;
 		margin-right: 4.8rem;
+	}
+
+	.header__main-nav__menu__item:hover > .t-main-nav {
+		color: var(--color-dark-blue);
 	}
 
 </style>
