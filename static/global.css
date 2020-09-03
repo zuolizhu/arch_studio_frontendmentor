@@ -150,6 +150,9 @@ a {
 .t-dark-gray {
   color: var(--color-dark-gray);
 }
+.t-mid-gray {
+  color: var(--color-mid-gray);
+}
 .t-very-light-gray {
   color: var(--color-very-light-gray);
 }

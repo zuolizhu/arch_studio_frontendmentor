@@ -2,7 +2,7 @@
 	import NavSticker from '../components/NavSticker.svelte';
 	import HomeSlider from '../components/HomeSlider.svelte';
 	import FeaturedProjects from '../components/FeaturedProjects.svelte';
-	
+
 	let sticker = 'Home';
 
 	
@@ -47,7 +47,7 @@
 <section class="featured">
 	<div class="container">
 		<div class="featured__heading">
-			<h2 class="t-h2 t-dark-blue">Featured</h2>
+			<h2 class="t-h2 t-dark-blue featured__heading__text">Featured</h2>
 			<a class="button button--all featured__button featured__button--top" href="/portfolio">
 				<span class="t-body--bold t-white button--all__text">See All</span>
 				<span class="button--all__arrow"></span>
@@ -60,6 +60,7 @@
 		</a>
 	</div>
 </section>
+
 <style>
 	/* Hero Section */
 	.hero {
@@ -279,6 +280,10 @@
 		.featured__heading {
 			margin-bottom: 6.4rem;
 		}
+	}
+
+	.featured__heading__text {
+		margin-top: .65rem;
 	}
 
 	.featured__button {
