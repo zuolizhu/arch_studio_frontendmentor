@@ -148,6 +148,18 @@ a {
   font-weight: var(--weight-bold);
 }
 
+.t-office-name {
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  font-weight: var(--weight-bold);
+}
+
+.t-office-detail {
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+  font-weight: var(--weight-mid);
+}
+
 .t-white {
   color: var(--color-white);
 }
