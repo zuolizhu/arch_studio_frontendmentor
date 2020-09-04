@@ -141,7 +141,8 @@ a {
   font-weight: var(--weight-bold);
 }
 
-.t-project-name {
+.t-project-name,
+.t-leader-name {
   font-size: 1.8rem;
   line-height: 2.5rem;
   font-weight: var(--weight-bold);
