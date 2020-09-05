@@ -7,6 +7,7 @@
 
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
+	import ContactForm from '../components/ContactForm.svelte';
 	import { onMount } from 'svelte';
 	import { mapSkin } from '../components/MapSkin.js';
 	export let apikey;
@@ -17,8 +18,8 @@
 
 	// locations need to be pinned on map
 	const officeLocations = [
-		['Main Office', 36.133276, -85.617512],
-		['office II', 31.998111, -96.6753252]
+		['Main Office', 35.133276, -85.717512],
+		['office II', 31.998111, -94.7753252]
 	];
 	
 	function viewLocationOnMap() {
@@ -144,6 +145,10 @@
 	<div class="container">
 		<div id="map"></div>
 	</div>
+</section>
+
+<section class="contactform">
+	<ContactForm/>
 </section>
 
 <style>
@@ -450,5 +455,11 @@
 	.contactmap > .container {
 		max-width: 111rem;
 		margin: 0 auto;
+	}
+	
+	/* Contact Form Section */
+	.contactform {
+		margin-top: 7.2rem;
+		padding: 0 3.2rem;
 	}
 </style>
