@@ -2,7 +2,7 @@
 	import NavSticker from '../components/NavSticker.svelte';
 	import HomeSlider from '../components/HomeSlider.svelte';
 	import FeaturedProjects from '../components/FeaturedProjects.svelte';
-
+	import PageTransition from '../components/PageTransition.svelte';
 	let sticker = 'Home';
 
 	
@@ -13,7 +13,7 @@
 </svelte:head>
 
 <NavSticker sticker={sticker}/>
-
+<PageTransition>
 <section class="hero">
 	<HomeSlider/>	
 </section>
@@ -60,7 +60,7 @@
 		</a>
 	</div>
 </section>
-
+</PageTransition>
 <style>
 	/* Hero Section */
 	.hero {

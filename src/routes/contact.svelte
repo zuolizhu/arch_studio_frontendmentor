@@ -8,6 +8,7 @@
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
 	import ContactForm from '../components/ContactForm.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
 	import { onMount } from 'svelte';
 	import { mapSkin } from '../components/MapSkin.js';
 	export let apikey;
@@ -92,6 +93,7 @@
 
 <NavSticker sticker={sticker}/>
 
+<PageTransition>
 <section class="contactintro">
 	<div class="container">
 		<div class="contactintro__hero"></div>
@@ -157,6 +159,7 @@
 <section class="contactform">
 	<ContactForm/>
 </section>
+</PageTransition>
 
 <style>
 	@media screen and (min-width: 768px) {

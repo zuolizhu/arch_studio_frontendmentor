@@ -1,5 +1,6 @@
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
 	let sticker = 'Portfolio';
 
 	const projects = [
@@ -24,19 +25,20 @@
 
 <NavSticker sticker={sticker}/>
 
-<section class="portfolio">
-	<div class="container">
-		{#each projects as project (project.id)}
-		<div class="portfolio-project portfolio-project--{project.id}">
-			<div class="portfolio-project__details">
-				<p class="portfolio-project__details__name t-project-name t-white">{project.name}</p>
-				<p class="portfolio-project__details__date t-body t-white t-op75">{project.date}</p>
+<PageTransition>
+	<section class="portfolio">
+		<div class="container">
+			{#each projects as project (project.id)}
+			<div class="portfolio-project portfolio-project--{project.id}">
+				<div class="portfolio-project__details">
+					<p class="portfolio-project__details__name t-project-name t-white">{project.name}</p>
+					<p class="portfolio-project__details__date t-body t-white t-op75">{project.date}</p>
+				</div>
 			</div>
+			{/each}
 		</div>
-		{/each}
-	</div>
-</section>
-
+	</section>
+</PageTransition>
 <style>
 	.portfolio {
 		margin-top: 5.6rem;

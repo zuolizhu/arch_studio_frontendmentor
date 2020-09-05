@@ -1,5 +1,7 @@
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
+	
 	let sticker = 'About Us';
 	const leaders = [
 		{ id: 1, name: 'Jake Richards', title: 'Chief Architect', avatar: '/about/desktop/avatar-jake.jpg' },
@@ -15,6 +17,7 @@
 
 <NavSticker sticker={sticker}/>
 
+<PageTransition>
 <section class="aboutintro">
 	<div class="container">
 		<div class="aboutintro__hero"></div>
@@ -71,7 +74,7 @@
 		</div>
 	</div>
 </section>
-
+</PageTransition>
 <style>
 	/* About Intro Section */
 	@media screen and (min-width: 768px) {
