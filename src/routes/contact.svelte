@@ -468,4 +468,9 @@
 			padding: 0 9.8rem;
 		}
 	}
+	@media screen and (min-width: 1024px) {
+		.contactform {
+			margin-top: 16rem;
+		}
+	}
 </style>

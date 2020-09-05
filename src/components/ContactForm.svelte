@@ -90,9 +90,11 @@
   }
 
   .form {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
   }
+  
 
   .form__heading {
     width: 16.8rem;
@@ -104,9 +106,25 @@
       margin-bottom: 6.4rem;
     }
   }
+  @media screen and (min-width: 1024px) {
+    .form__heading {
+      width: 23.6rem;
+      margin-bottom: 0;
+      margin-right: 14.4rem;
+    }
+  }
 
   .form__input {
     position: relative;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container {
+      display: flex;
+      margin: 0 auto;
+      max-width: 111rem;
+      flex-flow: row nowrap;
+    }
   }
 
   .form__input__error {
@@ -179,6 +197,7 @@
 
   .form__input__field,
   .form__input__box {
+    cursor: pointer;
     font-size: 2rem;
     line-height: 2.2rem;
     letter-spacing: -.31px;
