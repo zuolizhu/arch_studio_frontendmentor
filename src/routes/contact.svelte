@@ -8,9 +8,12 @@
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
 	import { onMount } from 'svelte';
+	import { mapSkin } from '../components/MapSkin.js';
 	export let apikey;
 	let sticker = 'Contact';
 	let map;
+
+	const defaultZoomLevel = 5.2;
 
 	// locations need to be pinned on map
 	const officeLocations = [
@@ -25,7 +28,6 @@
 			lng: officeLocations[this.dataset.locationid][2]
 		});
 	}
-
 
 	onMount(async () => {
 		// loading Google map
@@ -57,9 +59,10 @@
 		// Init map
 		window.initMap = function() {
 			map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 5,
+				zoom: defaultZoomLevel,
 				disableDefaultUI: true,
-				center: {lat: 36.6628839, lng: -93.8873037}
+				center: {lat: 33.6628839, lng: -90.8873037},
+				styles: mapSkin
 			});
 
 			// placing markers on map
@@ -67,8 +70,8 @@
 
 			// back to init center
 			map.addListener('click', () => {
-				map.setZoom(5);
-				map.setCenter({lat: 36.6628839, lng: -93.8873037});
+				map.setZoom(defaultZoomLevel);
+				map.setCenter({lat: 33.6628839, lng: -90.8873037});
 			});
 		};
 		document.head.appendChild(script);
@@ -80,8 +83,6 @@
 </svelte:head>
 
 <NavSticker sticker={sticker}/>
-
-<!-- https://github.com/sveltejs/sapper/issues/122 -->
 
 <section class="contactintro">
 	<div class="container">
@@ -426,8 +427,28 @@
 	#map {
 		height: 36.7rem;
 	}
+	@media screen and (min-width: 768px) {
+		#map {
+			height: 56rem;
+		}
+	}
 
 	:global(.gmnoprint) {
 		opacity: 0;
+	}
+
+	.contactmap {
+		margin-top: 7.2rem;
+	}
+	@media screen and (min-width: 768px) {
+		.contactmap {
+			margin-top: 20rem;
+			padding: 0 9.8rem;
+		}
+	}
+
+	.contactmap > .container {
+		max-width: 111rem;
+		margin: 0 auto;
 	}
 </style>
