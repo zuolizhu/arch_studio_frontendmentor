@@ -1,12 +1,82 @@
+<script context="module">
+	export async function preload({ params }, session) {
+		const apikey = session.apikey;
+		return { apikey };
+  }
+</script>
+
 <script>
 	import NavSticker from '../components/NavSticker.svelte';
+	import { onMount } from 'svelte';
+	export let apikey;
 	let sticker = 'Contact';
+	let map;
+
+	// locations need to be pinned on map
+	const officeLocations = [
+		['Main Office', 36.133276, -85.617512],
+		['office II', 31.998111, -96.6753252]
+	];
 	
+	function viewLocationOnMap() {
+		map.setZoom(10);
+		map.panTo({
+			lat: officeLocations[this.dataset.locationid][1],
+			lng: officeLocations[this.dataset.locationid][2]
+		});
+	}
+
+
+	onMount(async () => {
+		// loading Google map
+		const script = document.createElement('script');
+		script.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&callback=initMap`;
+		script.defer = true;
+
+		// Placing markers on map
+		function setMarkers(map) {
+			const icon = '/icons/icon-location.svg';
+			for (let i = 0; i < officeLocations.length; i++) {
+				const office = officeLocations[i];
+				const marker = new google.maps.Marker({
+					map: map,
+					icon: icon,
+					title: office[0],
+					animation: google.maps.Animation.DROP,
+					position: { lat: office[1], lng: office[2] }
+				});
+
+				marker.addListener('click', () => {
+					map.setZoom(10);
+					map.panTo(marker.getPosition());
+				});
+			}
+		}
+
+		
+		// Init map
+		window.initMap = function() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 5,
+				disableDefaultUI: true,
+				center: {lat: 36.6628839, lng: -93.8873037}
+			});
+
+			// placing markers on map
+			setMarkers(map);
+
+			// back to init center
+			map.addListener('click', () => {
+				map.setZoom(5);
+				map.setCenter({lat: 36.6628839, lng: -93.8873037});
+			});
+		};
+		document.head.appendChild(script);
+	})
 </script>
 
 <svelte:head>
 	<title>Contact | Arch Studio Website Challenge | Frontend Mentor</title>
-	
 </svelte:head>
 
 <NavSticker sticker={sticker}/>
@@ -38,7 +108,10 @@
 						<span>Address:</span><span>1892 Chenoweth Drive TN</span>
 						<span>Phone:</span><span>123-456-3451</span>
 					</div>
-					<div class="contactdetails__office__view">
+					<div
+					on:click={viewLocationOnMap}
+					data-locationid="0"
+					class="contactdetails__office__view">
 						<span class="t-body--bold t-dark-blue contactdetails__office__view__text">View on Map</span>
 						<span class="contactdetails__office__view__arrow"></span>
 					</div>
@@ -53,13 +126,22 @@
 						<span>Address:</span><span>3399 Wines Lane TX</span>
 						<span>Phone:</span><span>832-123-4321</span>
 					</div>
-					<div class="contactdetails__office__view">
+					<div 
+					on:click={viewLocationOnMap}
+					data-locationid="1"
+					class="contactdetails__office__view">
 						<span class="t-body--bold t-dark-blue contactdetails__office__view__text">View on Map</span>
 						<span class="contactdetails__office__view__arrow"></span>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</section>
+
+<section class="contactmap">
+	<div class="container">
+		<div id="map"></div>
 	</div>
 </section>
 
@@ -338,5 +420,14 @@
 			align-items: flex-start;
 			flex-flow: column nowrap;
 		}
+	}
+
+	/* Contact Map Section */
+	#map {
+		height: 36.7rem;
+	}
+
+	:global(.gmnoprint) {
+		opacity: 0;
 	}
 </style>

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
+    "dotenv": "^8.2.0",
     "polka": "next",
     "siema": "^1.5.1",
     "sirv": "^1.0.0"
