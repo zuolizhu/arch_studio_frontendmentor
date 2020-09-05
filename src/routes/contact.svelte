@@ -462,4 +462,10 @@
 		margin-top: 7.2rem;
 		padding: 0 3.2rem;
 	}
+	@media screen and (min-width: 768px) {
+		.contactform {
+			margin-top: 20rem;
+			padding: 0 9.8rem;
+		}
+	}
 </style>
