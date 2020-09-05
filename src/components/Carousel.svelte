@@ -5,7 +5,7 @@
 	export let perPage = 1
 	export let loop = true
 	export let autoplay = 3600
-	export let duration = 200
+	export let duration = 270
 	export let easing = 'ease-out'
 	export let startIndex = 0
 	export let draggable = true
