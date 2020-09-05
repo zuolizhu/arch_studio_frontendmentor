@@ -31,52 +31,59 @@
 	}
 
 	onMount(async () => {
-		// loading Google map
-		const script = document.createElement('script');
-		script.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&callback=initMap`;
-		script.defer = true;
-
-		// Placing markers on map
-		function setMarkers(map) {
-			const icon = '/icons/icon-location.svg';
-			for (let i = 0; i < officeLocations.length; i++) {
-				const office = officeLocations[i];
-				const marker = new google.maps.Marker({
-					map: map,
-					icon: icon,
-					title: office[0],
-					animation: google.maps.Animation.DROP,
-					position: { lat: office[1], lng: office[2] }
-				});
-
-				marker.addListener('click', () => {
-					map.setZoom(10);
-					map.panTo(marker.getPosition());
-				});
+		if (document.getElementById('scr-googlemap')) {
+			// refresh this page to reload the google map api
+			location.reload();
+		} else {
+			// loading Google map
+			const script = document.createElement('script');
+			script.setAttribute('id', 'scr-googlemap');
+			script.src = `https://maps.googleapis.com/maps/api/js?key=${apikey}&callback=initMap`;
+			script.defer = true;
+	
+			// Placing markers on map
+			function setMarkers(map) {
+				const icon = '/icons/icon-location.svg';
+				for (let i = 0; i < officeLocations.length; i++) {
+					const office = officeLocations[i];
+					const marker = new google.maps.Marker({
+						map: map,
+						icon: icon,
+						title: office[0],
+						animation: google.maps.Animation.DROP,
+						position: { lat: office[1], lng: office[2] }
+					});
+	
+					marker.addListener('click', () => {
+						map.setZoom(10);
+						map.panTo(marker.getPosition());
+					});
+				}
 			}
+	
+			
+			// Init map
+			window.initMap = function() {
+				map = new google.maps.Map(document.getElementById('map'), {
+					zoom: defaultZoomLevel,
+					disableDefaultUI: true,
+					center: {lat: 33.6628839, lng: -90.8873037},
+					styles: mapSkin
+				});
+	
+				// placing markers on map
+				setMarkers(map);
+	
+				// back to init center
+				map.addListener('click', () => {
+					map.setZoom(defaultZoomLevel);
+					map.setCenter({lat: 33.6628839, lng: -90.8873037});
+				});
+			};
+			document.head.appendChild(script);
 		}
+	});
 
-		
-		// Init map
-		window.initMap = function() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				zoom: defaultZoomLevel,
-				disableDefaultUI: true,
-				center: {lat: 33.6628839, lng: -90.8873037},
-				styles: mapSkin
-			});
-
-			// placing markers on map
-			setMarkers(map);
-
-			// back to init center
-			map.addListener('click', () => {
-				map.setZoom(defaultZoomLevel);
-				map.setCenter({lat: 33.6628839, lng: -90.8873037});
-			});
-		};
-		document.head.appendChild(script);
-	})
 </script>
 
 <svelte:head>
