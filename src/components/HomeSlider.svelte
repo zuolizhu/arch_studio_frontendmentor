@@ -13,7 +13,7 @@
   <div class="slide-content">
     <div class="slide-content__body">
       <div class="slide-content__body__container">
-        <h1 class="slide-content__body__heading t-h1 t-white">{slide.projectName}</h1>
+        <h2 class="slide-content__body__heading t-h1 t-white">{slide.projectName}</h2>
         <p class="slide-content__body__desc t-white t-body">{slide.projectDesc}</p>
         <a class="button button--hero" href="/portfolio">
           <span class="t-body--bold t-white">See Our Portfolio</span>

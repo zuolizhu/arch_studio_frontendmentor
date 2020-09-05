@@ -20,7 +20,7 @@
 
 <section class="welcome">
 	<div class="container">
-		<h1 class="welcome__bg t-h1-l t-very-light-gray">Welcome</h1>
+		<h2 class="welcome__bg t-h1-l t-very-light-gray">Welcome</h2>
 		<h2 class="t-h2 t-dark-blue welcome__heading">Welcome to<br>Arch Studio</h2>
 		<p class="t-body t-dark-gray welcome__body">
 			We have a unique network and skillset to help bring your projects to life. Our small team of highly skilled individuals combined with our large network put us in a strong position to deliver exceptional results.
