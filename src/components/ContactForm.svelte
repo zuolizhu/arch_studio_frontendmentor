@@ -181,7 +181,7 @@
   .form__input__field {
     width: 100%;
     margin-bottom: 4rem;
-    padding: 0 3.449rem 2.4rem;
+    padding: 0 3.449rem 2rem;
     transition: var(--transition) box-shadow;
     box-shadow: 0px -1px 0px var(--color-dark-blue) inset;
   }
@@ -199,7 +199,7 @@
   .form__input__box {
     cursor: pointer;
     font-size: 2rem;
-    line-height: 2.2rem;
+    line-height: 2.7rem;
     letter-spacing: -.31px;
     color: var(--color-dark-blue);
     font-weight: var(--weight-bold);
